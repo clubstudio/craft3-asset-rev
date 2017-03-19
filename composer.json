@@ -20,6 +20,6 @@
     "downloadUrl": "https://github.com/clubstudioltd/craft3-asset-rev/archive/master.zip",
     "developer": "Club Studio Ltd",
     "developerUrl": "https://clubstudio.co.uk",
-    "class": "Club\\AssetRev\\AssetRev",
+    "class": "Club\\AssetRev\\AssetRev"
   }
 }
