@@ -1,7 +1,7 @@
 ![image](./media/logo.png)
 
 # Craft 3 Asset Rev (Cache Busting)
-[![Build Status](https://travis-ci.org/clubstudioltd/craft3-asset-rev.svg?branch=develop)](https://travis-ci.org/clubstudioltd/craft3-asset-rev)
+[![Build Status](https://travis-ci.org/clubstudioltd/craft3-asset-rev.svg?branch=master)](https://travis-ci.org/clubstudioltd/craft3-asset-rev)
 
 A Twig extension for Craft 3 that helps you cache-bust your assets by appending a query string or swapping out asset file names with their revved version, as they are defined in a JSON manifest file.
 
