@@ -20,7 +20,7 @@ Using a manifest file is the recommended approach - you can read up on why using
 Install via composer:
 
 ```
-composer require clubstudioltd/craft3-asset-rev dev-master
+composer require clubstudioltd/craft3-asset-rev
 ```
 
 or, download the plugin and copy the contents of `src` into a folder called `assetrev` in your `plugins` directory.

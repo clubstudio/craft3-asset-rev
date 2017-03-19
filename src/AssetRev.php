@@ -6,9 +6,6 @@ use craft\base\Plugin;
 
 class AssetRev extends Plugin
 {
-    public $changelogUrl = '';
-    public $downloadUrl = '';
-
     public function init()
     {
         parent::init();

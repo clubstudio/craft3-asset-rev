@@ -1,7 +1,7 @@
 {
   "name": "clubstudioltd/craft3-asset-rev",
   "description": "A plugin to aid cache-busting in Craft 3",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "craft-plugin",
   "license": "MIT",
   "require": {
@@ -15,8 +15,11 @@
   "extra": {
     "name": "Asset Rev",
     "handle": "assetrev",
+    "changelogUrl": "https://github.com/clubstudioltd/craft3-asset-rev/blob/master/CHANGELOG.md",
+    "documentationUrl": "https://github.com/clubstudioltd/craft3-asset-rev",
+    "downloadUrl": "https://github.com/clubstudioltd/craft3-asset-rev/archive/master.zip",
     "developer": "Club Studio Ltd",
     "developerUrl": "https://clubstudio.co.uk",
-    "class": "Club\\AssetRev\\AssetRev"
+    "class": "Club\\AssetRev\\AssetRev",
   }
 }
