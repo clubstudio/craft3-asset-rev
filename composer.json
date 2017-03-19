@@ -1,0 +1,22 @@
+{
+  "name": "clubstudioltd/assetrev",
+  "description": "A plugin to aid cache-busting in Craft 3",
+  "version": "0.1.0",
+  "type": "craft-plugin",
+  "minimum-stability": "dev",
+  "require": {
+    "craftcms/cms": "^3.0.0-alpha.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Club\\AssetRev\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Asset Rev",
+    "handle": "assetrev",
+    "developer": "Club Studio Ltd",
+    "developerUrl": "https://clubstudio.co.uk",
+    "class": "Club\\AssetRev\\AssetRev"
+  }
+}
