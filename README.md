@@ -13,7 +13,16 @@ In order to speed up the load time of your pages, you can set a far-future expir
 Using a manifest file is the recommended approach - you can read up on why using query strings isn't ideal [here](http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/).
 
 ## Installation
-Copy the `assetrev` folder to your `plugins` directory and activate it from the Craft plugins settings page. Once activated, you may want to specify a custom path to your asset manifest file within the plugin configuration.
+
+Install via composer:
+
+```
+composer require clubstudioltd/craft3-asset-rev dev-master
+```
+
+or, download the plugin and copy the contents of `src` into a folder called `assetrev` in your `plugins` directory.
+
+Be sure to activate the plugin from the Craft plugins settings page. Once activated, you may want to specify a custom path to your asset manifest file within the plugin configuration.
 
 ## Configuration
 The plugin comes with a `config.php` file that defines some sensible defaults.
