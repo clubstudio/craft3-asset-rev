@@ -3,7 +3,6 @@
   "description": "A plugin to aid cache-busting in Craft 3",
   "version": "0.1.0",
   "type": "craft-plugin",
-  "minimum-stability": "dev",
   "require": {
     "craftcms/cms": "^3.0.0-alpha.1"
   },
