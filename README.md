@@ -39,7 +39,7 @@ return array(
     '*' => array(
         'manifestPath' => 'resources/assets/assets.json',
         'assetsBasePath' => '../public/build/',
-        'assetUrlPrefix' => getenv('assetUrlPrefix'),
+        'assetUrlPrefix' => getenv('ASSET_URL_PREFIX'),
     ),
 );
 ```
