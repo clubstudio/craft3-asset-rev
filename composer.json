@@ -15,6 +15,8 @@
   "extra": {
     "name": "Asset Rev",
     "handle": "assetrev",
+    "hasCpSettings": false,
+    "hasCpSection": false,
     "changelogUrl": "https://github.com/clubstudioltd/craft3-asset-rev/blob/master/CHANGELOG.md",
     "documentationUrl": "https://github.com/clubstudioltd/craft3-asset-rev",
     "downloadUrl": "https://github.com/clubstudioltd/craft3-asset-rev/archive/master.zip",
