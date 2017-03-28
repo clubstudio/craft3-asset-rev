@@ -16,4 +16,9 @@ class AssetRev extends Plugin
 
         Craft::$app->view->twig->addExtension(new AssetRevTwigExtension);
     }
+
+    protected function createSettingsModel()
+    {
+        return new \Club\AssetRev\models\Settings();
+    }
 }

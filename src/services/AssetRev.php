@@ -16,9 +16,9 @@ class AssetRev extends \craft\base\Component
     public function getAssetFilename($file)
     {
         $revver = new FilenameRev(
-            Craft::$app->config->get('manifestPath', 'assetrev'),
-            Craft::$app->config->get('assetsBasePath', 'assetrev'),
-            Craft::$app->config->get('assetUrlPrefix', 'assetrev')
+            \Club\AssetRev\AssetRev::getInstance()->settings->manifestPath,
+            \Club\AssetRev\AssetRev::getInstance()->settings->assetsBasePath,
+            \Club\AssetRev\AssetRev::getInstance()->settings->assetUrlPrefix
         );
 
         $revver->setBasePath(CRAFT_BASE_PATH . DIRECTORY_SEPARATOR);
