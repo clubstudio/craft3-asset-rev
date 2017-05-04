@@ -1,11 +1,11 @@
 {
   "name": "clubstudioltd/craft3-asset-rev",
   "description": "A plugin to aid cache-busting in Craft 3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "craft-plugin",
   "license": "MIT",
   "require": {
-    "craftcms/cms": "^3.0.0-alpha.1"
+    "craftcms/cms": "^3.0.0-beta.8"
   },
   "autoload": {
     "psr-4": {
