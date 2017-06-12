@@ -31,11 +31,13 @@ class AssetRevTwigExtension extends Twig_Extension
     /**
      * Get the filename of a asset
      *
-     * @param $file
+     * @param      $file
+     * @param bool $strict      Throw an exception if the file does not exist in the manifest file.
+     *
      * @return string
      */
-    public function getAssetFilename($file)
+    public function getAssetFilename($file, $strict = true)
     {
-        return AssetRev::getInstance()->assetRev->getAssetFilename($file);
+        return AssetRev::getInstance()->assetRev->getAssetFilename($file, $strict);
     }
 }

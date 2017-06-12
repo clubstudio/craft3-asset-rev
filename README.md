@@ -61,6 +61,14 @@ Once activated and configured you can use the `rev()` function in your templates
 <link rel="stylesheet" href="{{ rev('css/main.css') }}">
 ```
 
+In some cases (e.g. when building additional files that aren't available in the manifest file), you can prevent the extension from throwing an exception about a missing file mapping by setting the optional `$strict` parameter to `false`: 
+
+```
+<link rel="stylesheet" href="{{ rev('css/not-available-in-manifest.css', false) }}">
+```
+
+This will append a query string (see below) if the file does not exist in the manifest file: `css/not-available-in-manifest.css?1473534554`.
+
 ### Manifest Files
 
 `css/main.css` will be replaced with the corresponding hashed filename as defined within your assets manifest .json file.
