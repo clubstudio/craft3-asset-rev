@@ -73,6 +73,24 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function it_appends_filemtime_as_a_query_string_if_the_file_to_rev_doesnt_exist_in_the_manifest_file()
+    {
+        $asset = 'files/copied-asset.css';
+        $assetPath = stream_resolve_include_path($asset);
+        $assetsPath = str_replace($asset, '', $assetPath);
+
+        $revver = new FilenameRev('files/manifest.json');
+        $revver->setBasePath($assetsPath);
+
+        $this->assertEquals(
+            $asset . '?' . filemtime($assetPath),
+            $revver->rev($asset, false)
+        );
+    }
+
+    /**
+     * @test
+     */
     public function it_prepends_the_asset_prefix_to_the_outputted_file_name()
     {
         $asset = 'files/asset.css';
