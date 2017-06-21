@@ -17,7 +17,7 @@ class AssetRevTwigExtension extends Twig_Extension
     }
 
     /**
-     * Get Twig Functions
+     * Get Twig Functions.
      *
      * @return array
      */
@@ -29,7 +29,7 @@ class AssetRevTwigExtension extends Twig_Extension
     }
 
     /**
-     * Get the filename of a asset
+     * Get the filename of a asset.
      *
      * @param      $file
      * @param bool $strict      Throw an exception if the file does not exist in the manifest file.
