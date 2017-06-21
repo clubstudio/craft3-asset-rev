@@ -39,20 +39,32 @@ class FilenameRev
         return $this->basePath . $file;
     }
 
-    public function rev($file)
+    public function rev($file, $strict)
     {
         $manifest = $this->getAbsolutePath($this->manifestPath);
+        $revvedFile = null;
 
-        $revvedFile = $this->manifestExists($manifest) ?
-            $this->revUsingManifest($manifest, $file) :
-            $this->appendQueryString($file);
+        if ($this->manifestExists($manifest) && ($strict || $this->existsInManifest($manifest, $file))) {
+            $revvedFile = $this->revUsingManifest($manifest, $file);
+        } elseif ($strict || file_exists($file)) {
+            $revvedFile = $this->appendQueryString($file);
+        }
 
-        return $this->prependAssetPrefix($revvedFile);
+        return $this->prependAssetPrefix($revvedFile ?? $file);
     }
 
     protected function manifestExists($manifestPath)
     {
         return is_file($manifestPath);
+    }
+
+    protected function existsInManifest($manifest, $file)
+    {
+        if (is_null(self::$manifest)) {
+            self::$manifest = json_decode(file_get_contents($manifest), true);
+        }
+
+        return isset(self::$manifest[$file]);
     }
 
     protected function revUsingManifest($manifest, $file)

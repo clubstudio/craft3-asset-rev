@@ -49,7 +49,7 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        (new FilenameRev)->rev('missing-file.css');
+        (new FilenameRev)->rev('missing-file.css', true);
     }
 
     /**
@@ -66,7 +66,41 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(
             $asset . '?' . filemtime($assetPath),
-            $revver->rev($asset)
+            $revver->rev($asset, true)
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function it_appends_filemtime_as_a_query_string_if_the_file_to_rev_doesnt_exist_in_the_manifest_file()
+    {
+        $asset = 'files/copied-asset.css';
+        $assetPath = stream_resolve_include_path($asset);
+        $assetsPath = str_replace($asset, '', $assetPath);
+
+        $revver = new FilenameRev('files/manifest.json');
+        $revver->setBasePath($assetsPath);
+
+        $this->assertEquals(
+            $asset . '?' . filemtime($assetPath),
+            $revver->rev($asset, false)
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_the_assets_path_if_the_file_doesnt_exist_and_strict_is_false()
+    {
+        $asset = 'missing-file.css';
+        $assetPrefix = '/asset/base/path';
+
+        $revver = new FilenameRev(null, null, $assetPrefix);
+
+        $this->assertEquals(
+            $assetPrefix . $asset,
+            $revver->rev($asset, false)
         );
     }
 
@@ -84,7 +118,7 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(
             'asset/base/path/files/asset.css?' . filemtime($assetPath),
-            $revver->rev($asset)
+            $revver->rev($asset, true)
         );
     }
 
@@ -102,7 +136,7 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(
             $assetsPath . $asset . '?' . filemtime($assetPath),
-            $revver->rev($asset)
+            $revver->rev($asset, true)
         );
     }
 
@@ -121,7 +155,7 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
 
         $revver = new FilenameRev('files/manifest.json');
         $revver->setBasePath($assetsPath);
-        $revver->rev($asset);
+        $revver->rev($asset, true);
     }
 
     /**
@@ -137,7 +171,7 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(
             'css/asset.a9961d38.css',
-            $revver->rev('css/asset.css')
+            $revver->rev('css/asset.css', true)
         );
     }
 
@@ -154,7 +188,7 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(
             'css/asset.a9961d38.css',
-            $revver->rev('css/asset.css')
+            $revver->rev('css/asset.css', true)
         );
     }
 }
