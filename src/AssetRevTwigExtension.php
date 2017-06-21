@@ -1,4 +1,5 @@
 <?php
+
 namespace Club\AssetRev;
 
 use Twig_Extension;
@@ -17,7 +18,7 @@ class AssetRevTwigExtension extends Twig_Extension
     }
 
     /**
-     * Get Twig Functions
+     * Get Twig Functions.
      *
      * @return array
      */
@@ -29,7 +30,7 @@ class AssetRevTwigExtension extends Twig_Extension
     }
 
     /**
-     * Get the filename of a asset
+     * Get the filename of a asset.
      *
      * @param $file
      * @return string

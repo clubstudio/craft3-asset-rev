@@ -1,14 +1,13 @@
 <?php
+
 namespace Club\AssetRev\services;
 
-use Craft;
-use InvalidArgumentException;
 use Club\AssetRev\utilities\FilenameRev;
 
 class AssetRev extends \craft\base\Component
 {
     /**
-     * Get the filename of a asset
+     * Get the filename of a asset.
      *
      * @param $file
      * @return string
