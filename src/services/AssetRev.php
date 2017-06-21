@@ -1,4 +1,5 @@
 <?php
+
 namespace Club\AssetRev\services;
 
 use Club\AssetRev\utilities\FilenameRev;
