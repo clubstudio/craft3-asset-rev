@@ -42,12 +42,15 @@ class FilenameRev
     public function rev($file, $strict)
     {
         $manifest = $this->getAbsolutePath($this->manifestPath);
+        $revvedFile = null;
 
-        $revvedFile = $this->manifestExists($manifest) && ($strict || $this->existsInManifest($manifest, $file)) ?
-            $this->revUsingManifest($manifest, $file) :
-            $this->appendQueryString($file);
+        if ($this->manifestExists($manifest) && ($strict || $this->existsInManifest($manifest, $file))) {
+            $revvedFile = $this->revUsingManifest($manifest, $file);
+        } elseif ($strict || file_exists($file)) {
+            $revvedFile = $this->appendQueryString($file);
+        }
 
-        return $this->prependAssetPrefix($revvedFile);
+        return $this->prependAssetPrefix($revvedFile ?? $file);
     }
 
     protected function manifestExists($manifestPath)

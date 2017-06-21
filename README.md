@@ -61,7 +61,7 @@ Once activated and configured you can use the `rev()` function in your templates
 <link rel="stylesheet" href="{{ rev('css/main.css') }}">
 ```
 
-In some cases (e.g. when building additional files that aren't available in the manifest file), you can prevent the extension from throwing an exception about a missing file mapping by setting the optional `$strict` parameter to `false`: 
+In some cases (e.g. when building additional files that aren't available in the manifest file or are files that are served via proxy), you can prevent the extension from throwing an exception about a missing file mapping by setting the optional `$strict` parameter to `false`: 
 
 ```
 <link rel="stylesheet" href="{{ rev('css/not-available-in-manifest.css', false) }}">

@@ -91,6 +91,22 @@ class FilenameRevTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function it_returns_the_assets_path_if_the_file_doesnt_exist_and_strict_is_false()
+    {
+        $asset = 'missing-file.css';
+        $assetPrefix = '/asset/base/path';
+
+        $revver = new FilenameRev(null, null, $assetPrefix);
+
+        $this->assertEquals(
+            $assetPrefix . $asset,
+            $revver->rev($asset, false)
+        );
+    }
+
+    /**
+     * @test
+     */
     public function it_prepends_the_asset_prefix_to_the_outputted_file_name()
     {
         $asset = 'files/asset.css';
