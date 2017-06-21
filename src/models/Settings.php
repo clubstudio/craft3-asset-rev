@@ -1,4 +1,5 @@
 <?php
+
 namespace Club\AssetRev\models;
 
 use craft\base\Model;
